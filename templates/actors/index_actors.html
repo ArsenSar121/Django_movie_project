@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main role="main" class="container">
+        <div class="jumbotron text-center">
+            <form action="">
+                <label for="">Search</label>
+                <input type="search" name="first_name" id="">
+                <button class="btn btn-primary">Search</button>
+            </form>
+            <div class="card-group">
+                {% for actor in actors %}
+                    {{ forloop.counter }}
+                    {% if forloop.counter|divisibleby:3 %}
+                        <div class="card-group">
+                    {% endif %}
+                <div class="card">
+                    {% comment %} <img src="{% if movie.image %}{{ movie.image.url }}{% endif %}" width="300" class="card-img-top" {% endcomment %}
+                         {% comment %} alt="No Image"/> {% endcomment %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ actor.first_name }}</h5>
+                        <h6 class="card-title">{{ actor.last_name }}</h6>
+                        <p class="card-text">
+                            {{ actor.description }}
+                        </p>
+                        <p class="card-text">
+                            {{ actor.average_movie_rate }}
+                        </p>
+                        <p class="card-text">
+                            {{ actor.date_of_birth }}
+                        </p>
+                        <a href="{% url 'actors:detail_actors' actor.pk %}"><button class="btn btn-success">Read more</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

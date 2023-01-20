@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}ACTORS|DETAIL{% endblock %}
+
+{% block content %}
+    <div class="actor-card">
+
+        <div class="container">
+
+
+            <div class="hero">
+
+                <div class="details">
+
+                    <div class="title1"><h3>{{ actor.name }}</h3></div>
+                    <div class="title1">First Name: {{ actor.first_name }}</div>
+                    <div class="title1">Last Name: {{ actor.rate }}</div>
+                    <div class="title1">Description:
+                         {{ actor.description }}</div>
+                    <div class="title1">Date of Birth: {{ actor.date_of_birth }}</div>
+                    <div class="title1">Average Rate: {{ actor.average_movie_rate }}</div>
+                    <br>
+
+
+
+                </div> <!-- end details -->
+
+            </div> <!-- end hero -->
+
+            <div class="description">
+
+
+                <div class="column2">
+
+                    <p>{{ actor.description }}</p>
+                </div> <!-- end column2 -->
+            </div> <!-- end description -->
+
+
+        </div> <!-- end container -->
+    </div> <!-- end movie-card -->
+{% endblock %}
